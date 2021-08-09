@@ -1,3 +1,5 @@
+import 'package:designs/modules/choose_payment_method/choose_payment_method_screen.dart';
+import 'package:designs/modules/invoice/invoice_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -6,8 +8,14 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_signin_button/button_builder.dart';
 
-class DeliveryInfoScreen extends StatelessWidget {
+class DeliveryInfoScreen extends StatefulWidget {
+  @override
+  State<DeliveryInfoScreen> createState() => _DeliveryInfoScreenState();
+}
+
+class _DeliveryInfoScreenState extends State<DeliveryInfoScreen> {
   bool checkBoxValue = false;
+
   @override
   Widget build(BuildContext context) {
 
@@ -255,7 +263,12 @@ class DeliveryInfoScreen extends StatelessWidget {
                       fontSize: 14),
                 ),
                   value: checkBoxValue,
-                  onChanged: (value){print(value);},
+                  onChanged: (value){
+                  setState(() {
+                    checkBoxValue = value!;
+                  });
+                  print(value);
+                  },
                 controlAffinity: ListTileControlAffinity.leading, //de 3shan a3ml el checkbox fl awl
               ),
               SizedBox(height: 50,),
@@ -263,7 +276,10 @@ class DeliveryInfoScreen extends StatelessWidget {
                 alignment: Alignment.bottomCenter,
                 child: SignInButtonBuilder(
                   backgroundColor: Colors.red,
-                  onPressed: (){},
+                  onPressed: (){
+                    Navigator.push(context,
+                    MaterialPageRoute(builder: (context)=> PaymentMethodScreen()));
+                  },
                   text: 'CONFIRM & CHECK YOUR INVOICE',
                   width: double.infinity,
                   fontSize: 16,

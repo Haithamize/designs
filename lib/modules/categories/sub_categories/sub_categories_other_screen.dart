@@ -1,64 +1,117 @@
+import 'package:designs/modules/categories/sub_categories/sub_categories_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SubCategoriesOtherScreen extends StatelessWidget {
 
+  //Appbar
+  //App bar
+  //  appBar:  AppBar(
+  //         leading: IconButton(
+  //           onPressed: () {
+  //             Navigator.pop(context);
+  //           },
+  //           icon: Icon(
+  //             Icons.arrow_back_ios,
+  //             color: Colors.black,
+  //           ),
+  //         ),
+  //         toolbarHeight: MediaQuery.of(context).size.height / 8,
+  //         shape: const RoundedRectangleBorder(
+  //           borderRadius: BorderRadiusDirectional.only(
+  //               bottomStart: Radius.circular(25), bottomEnd: Radius.circular(25)),
+  //         ),
+  //         backgroundColor: Colors.white,
+  //         title: const Center(
+  //           child: Text(
+  //             'Main Category1',
+  //             style: TextStyle(
+  //                 color: CupertinoColors.black,
+  //                 fontSize: 18,
+  //                 fontWeight: FontWeight.normal),
+  //           ),
+  //         ),
+  //         actions: const [
+  //           Padding(
+  //             padding: EdgeInsets.all(8.0),
+  //             child: Icon(
+  //               Icons.home,
+  //               color: Colors.black,
+  //               size: 50,
+  //             ),
+  //           ),
+  //         ],
+  //       ),
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar:  AppBar(
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(
-            Icons.arrow_back_ios,
-            color: Colors.black,
-          ),
+    // return Scaffold(
+    //   appBar:  AppBar(
+    //     leading: IconButton(
+    //       onPressed: () {
+    //         Navigator.pop(context);
+    //       },
+    //       icon: Icon(
+    //         Icons.arrow_back_ios,
+    //         color: Colors.black,
+    //       ),
+    //     ),
+    //     toolbarHeight: MediaQuery.of(context).size.height / 8,
+    //     shape: const RoundedRectangleBorder(
+    //       borderRadius: BorderRadiusDirectional.only(
+    //           bottomStart: Radius.circular(25), bottomEnd: Radius.circular(25)),
+    //     ),
+    //     backgroundColor: Colors.white,
+    //     title: const Center(
+    //       child: Text(
+    //         'Main Category1',
+    //         style: TextStyle(
+    //             color: CupertinoColors.black,
+    //             fontSize: 18,
+    //             fontWeight: FontWeight.normal),
+    //       ),
+    //     ),
+    //     actions: const [
+    //       Padding(
+    //         padding: EdgeInsets.all(8.0),
+    //         child: Icon(
+    //           Icons.home,
+    //           color: Colors.black,
+    //           size: 50,
+    //         ),
+    //       ),
+    //     ],
+    //   ),
+    //   body: Padding(
+    //     padding: const EdgeInsets.all(12.0),
+    //     child: GridView.builder(
+    //         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+    //             crossAxisCount: 2,
+    //           mainAxisSpacing: 4,
+    //           crossAxisSpacing: 4,
+    //           childAspectRatio: 1/1.055,
+    //         ),
+    //         itemBuilder: (context,index)=> buildMainCategory1ListViewItem(),
+    //       itemCount: 12,
+    //     ),
+    //   ),
+    // );
+    return Padding(
+      padding: const EdgeInsets.all(12.0),
+      child: GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          mainAxisSpacing: 4,
+          crossAxisSpacing: 4,
+          childAspectRatio: 1/1.055,
         ),
-        toolbarHeight: MediaQuery.of(context).size.height / 8,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadiusDirectional.only(
-              bottomStart: Radius.circular(25), bottomEnd: Radius.circular(25)),
-        ),
-        backgroundColor: Colors.white,
-        title: const Center(
-          child: Text(
-            'Main Category1',
-            style: TextStyle(
-                color: CupertinoColors.black,
-                fontSize: 18,
-                fontWeight: FontWeight.normal),
-          ),
-        ),
-        actions: const [
-          Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Icon(
-              Icons.home,
-              color: Colors.black,
-              size: 50,
-            ),
-          ),
-        ],
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: GridView.builder(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-              mainAxisSpacing: 4,
-              crossAxisSpacing: 4,
-              childAspectRatio: 1/1.055,
-            ),
-            itemBuilder: (context,index)=> buildMainCategory1ListViewItem(),
-          itemCount: 12,
-        ),
+        itemBuilder: (context,index)=> buildMainCategory1ListViewItem(context,index),
+        itemCount: 12,
       ),
     );
   }
 
-  Widget buildMainCategory1ListViewItem() {
+  Widget buildMainCategory1ListViewItem(context, index) {
     return Container(
       decoration: BoxDecoration(
           border: Border.all(
@@ -86,7 +139,10 @@ class SubCategoriesOtherScreen extends StatelessWidget {
                       fontWeight: FontWeight.bold
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context)=>SubCategoriesScreen()));
+                },
               ))
         ],
       ),

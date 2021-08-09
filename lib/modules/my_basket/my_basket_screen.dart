@@ -5,117 +5,191 @@ import 'package:flutter_signin_button/button_builder.dart';
 class MyBasketScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.grey[350],
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(
-            Icons.arrow_back_ios,
-            color: Colors.black,
+    //da scaffold bl appbar
+    // return Scaffold(
+    //   backgroundColor: Colors.grey[350],
+    //   appBar: AppBar(
+    //     leading: IconButton(
+    //       onPressed: () {
+    //         Navigator.pop(context);
+    //       },
+    //       icon: Icon(
+    //         Icons.arrow_back_ios,
+    //         color: Colors.black,
+    //       ),
+    //     ),
+    //     toolbarHeight: MediaQuery.of(context).size.height / 8,
+    //     shape: const RoundedRectangleBorder(
+    //       borderRadius: BorderRadiusDirectional.only(
+    //           bottomStart: Radius.circular(25), bottomEnd: Radius.circular(25)),
+    //     ),
+    //     backgroundColor: Colors.white,
+    //     title: const Center(
+    //       child: Text(
+    //         'My Basket',
+    //         style: TextStyle(
+    //             color: CupertinoColors.black,
+    //             fontSize: 18,
+    //             fontWeight: FontWeight.normal),
+    //       ),
+    //     ),
+    //     actions: const [
+    //       Padding(
+    //         padding: EdgeInsets.all(8.0),
+    //         child: Icon(
+    //           Icons.home,
+    //           color: Colors.black,
+    //           size: 50,
+    //         ),
+    //       ),
+    //     ],
+    //   ),
+    //   body: Column(
+    //     // crossAxisAlignment: CrossAxisAlignment.start,
+    //     // mainAxisAlignment: MainAxisAlignment.start,
+    //     children: [
+    //       SizedBox(height: 15,),
+    //       Container(
+    //         decoration: BoxDecoration(
+    //           border: Border.all(color: Colors.red.shade900),
+    //           color: Colors.red,
+    //         ),
+    //         child: Padding(
+    //           padding: const EdgeInsets.all(8.0),
+    //           child: Column(
+    //             children: [
+    //               Row(
+    //                 children: [
+    //                   Icon(
+    //                     Icons.shopping_cart,
+    //                     color: Colors.grey.shade200,
+    //                   ),
+    //                   SizedBox(width: 5),
+    //                   Text(
+    //                     'My Basket',
+    //                     style: TextStyle(
+    //                         color: Colors.white,
+    //                         fontWeight: FontWeight.normal,
+    //                       fontSize: 14
+    //                     ),
+    //                   ),
+    //                   Spacer(),
+    //                   Text(
+    //                     'This is Mini Basket',
+    //                     style: TextStyle(
+    //                         color: CupertinoColors.white,
+    //                         fontSize: 12,
+    //                         fontWeight: FontWeight.normal),
+    //                   ),
+    //                 ],
+    //               ),
+    //               SizedBox(height: 10,),
+    //               Text(
+    //                 'Add 3 or More Products to Evolve Your Basket To Giant Basket and Enjoy Our Free Delivery',
+    //                 style: TextStyle(
+    //                     color: CupertinoColors.white,
+    //                     fontSize: 12,
+    //                     fontWeight: FontWeight.normal),
+    //               ),
+    //             ],
+    //           ),
+    //         ),
+    //       ), //da el container el a7mar eli f awl el screen
+    //       Expanded(
+    //         child: ListView.builder(
+    //           physics: BouncingScrollPhysics(),
+    //           itemBuilder: (context, index) => buildListViewItem(),
+    //           itemCount: 5,
+    //         ),
+    //       ),
+    //       Padding(
+    //         padding: const EdgeInsets.symmetric(horizontal: 15),
+    //         child: Align(
+    //           alignment: Alignment.bottomCenter,
+    //           child: SignInButtonBuilder(
+    //             backgroundColor: Colors.red,
+    //             onPressed: (){},
+    //             text: 'CHOOSE YOUR PAYMENT METHOD',
+    //             width: double.infinity,
+    //             fontSize: 16,
+    //           ),
+    //         ),
+    //       ),
+    //     ],
+    //   ),
+    // );
+    return Column(
+      // crossAxisAlignment: CrossAxisAlignment.start,
+      // mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        SizedBox(height: 15,),
+        Container(
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.red.shade900),
+            color: Colors.red,
           ),
-        ),
-        toolbarHeight: MediaQuery.of(context).size.height / 8,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadiusDirectional.only(
-              bottomStart: Radius.circular(25), bottomEnd: Radius.circular(25)),
-        ),
-        backgroundColor: Colors.white,
-        title: const Center(
-          child: Text(
-            'My Basket',
-            style: TextStyle(
-                color: CupertinoColors.black,
-                fontSize: 18,
-                fontWeight: FontWeight.normal),
-          ),
-        ),
-        actions: const [
-          Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Icon(
-              Icons.home,
-              color: Colors.black,
-              size: 50,
-            ),
-          ),
-        ],
-      ),
-      body: Column(
-        // crossAxisAlignment: CrossAxisAlignment.start,
-        // mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          SizedBox(height: 15,),
-          Container(
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.red.shade900),
-              color: Colors.red,
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                children: [
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.shopping_cart,
-                        color: Colors.grey.shade200,
-                      ),
-                      SizedBox(width: 5),
-                      Text(
-                        'My Basket',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.normal,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    Icon(
+                      Icons.shopping_cart,
+                      color: Colors.grey.shade200,
+                    ),
+                    SizedBox(width: 5),
+                    Text(
+                      'My Basket',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.normal,
                           fontSize: 14
-                        ),
                       ),
-                      Spacer(),
-                      Text(
-                        'This is Mini Basket',
-                        style: TextStyle(
-                            color: CupertinoColors.white,
-                            fontSize: 12,
-                            fontWeight: FontWeight.normal),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 10,),
-                  Text(
-                    'Add 3 or More Products to Evolve Your Basket To Giant Basket and Enjoy Our Free Delivery',
-                    style: TextStyle(
-                        color: CupertinoColors.white,
-                        fontSize: 12,
-                        fontWeight: FontWeight.normal),
-                  ),
-                ],
-              ),
-            ),
-          ), //da el container el a7mar eli f awl el screen
-          Expanded(
-            child: ListView.builder(
-              physics: BouncingScrollPhysics(),
-              itemBuilder: (context, index) => buildListViewItem(),
-              itemCount: 5,
+                    ),
+                    Spacer(),
+                    Text(
+                      'This is Mini Basket',
+                      style: TextStyle(
+                          color: CupertinoColors.white,
+                          fontSize: 12,
+                          fontWeight: FontWeight.normal),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 10,),
+                Text(
+                  'Add 3 or More Products to Evolve Your Basket To Giant Basket and Enjoy Our Free Delivery',
+                  style: TextStyle(
+                      color: CupertinoColors.white,
+                      fontSize: 12,
+                      fontWeight: FontWeight.normal),
+                ),
+              ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: Align(
-              alignment: Alignment.bottomCenter,
-              child: SignInButtonBuilder(
-                backgroundColor: Colors.red,
-                onPressed: (){},
-                text: 'CHOOSE YOUR PAYMENT METHOD',
-                width: double.infinity,
-                fontSize: 16,
-              ),
+        ), //da el container el a7mar eli f awl el screen
+        Expanded(
+          child: ListView.builder(
+            physics: BouncingScrollPhysics(),
+            itemBuilder: (context, index) => buildListViewItem(),
+            itemCount: 5,
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15),
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: SignInButtonBuilder(
+              backgroundColor: Colors.red,
+              onPressed: (){},
+              text: 'CHOOSE YOUR PAYMENT METHOD',
+              width: double.infinity,
+              fontSize: 16,
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 

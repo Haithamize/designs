@@ -1,3 +1,4 @@
+import 'package:designs/modules/alert_dialogs/order_confirmed.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_credit_card/credit_card_form.dart';
 import 'package:flutter_credit_card/credit_card_model.dart';
@@ -103,6 +104,8 @@ class CreditCardPaymentState extends State<CreditCardPayment> {
                         onPressed: () {
                           if (formKey.currentState!.validate()) {
                             print('valid!');
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context)=> OrderConfirmed()));
                           } else {
                             print('invalid!');
                           }

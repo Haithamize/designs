@@ -1,3 +1,4 @@
+import 'package:designs/modules/invoice/invoice_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/button_builder.dart';
@@ -214,7 +215,10 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                     borderRadius: BorderRadius.circular(5),
                   ),
                   child: IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context)=> InvoiceScreen()));
+                    },
                     icon: Text(
                       'PROCEED',
                       style: TextStyle(

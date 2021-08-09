@@ -2,6 +2,8 @@ import 'package:designs/layout/cubit/layout_cubit.dart';
 import 'package:designs/layout/cubit/layout_states.dart';
 import 'package:designs/modules/categories/categories_screen.dart';
 import 'package:designs/modules/categories/see_all_deals/deal_of_the_day.dart';
+import 'package:designs/modules/categories/sub_categories/sub_categories_other_screen.dart';
+import 'package:designs/modules/my_basket/my_basket_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -53,7 +55,7 @@ class ZumraLayout extends StatelessWidget {
             backgroundColor: Colors.white,
             currentIndex: ZumraLayoutCubit.get(context).currentIndex,
           ),
-          body: ZumraCategoriesScreen(),
+          body: ZumraLayoutCubit.get(context).screens[ZumraLayoutCubit.get(context).currentIndex],
         );
       },
     );

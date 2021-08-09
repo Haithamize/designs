@@ -1,4 +1,5 @@
 import 'package:designs/modules/categories/see_all_deals/deal_of_the_day.dart';
+import 'package:designs/modules/delivery_info/delivery_info_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -20,7 +21,7 @@ class ZumraCategoriesScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: TextFormField(
                 decoration: const InputDecoration(
-                  suffix: Icon(Icons.search, color: Colors.black),
+                  suffixIcon: Icon(Icons.search, color: Colors.black),
                   labelText: 'What are you looking for',
                   border: OutlineInputBorder(),
                 ),
@@ -38,7 +39,10 @@ class ZumraCategoriesScreen extends StatelessWidget {
                 ),
                 const Spacer(),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context)=> DeliveryInfoScreen()));
+                  },
                   child: const Text(
                     'change',
                     style: TextStyle(

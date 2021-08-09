@@ -1,3 +1,5 @@
+import 'package:designs/modules/choose_payment_method/choose_payment_method_screen.dart';
+import 'package:designs/modules/payment_with_credit_card/credit_card_payment_screen.dart';
 import 'package:designs/utilities/sticky_tables/decorated_table.dart';
 import 'package:designs/utilities/sticky_tables/simple_table_page.dart';
 import 'package:designs/utilities/sticky_tables/tap_handler_page.dart';
@@ -273,7 +275,10 @@ class InvoiceScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(5),
                 ),
                 child: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context)=> CreditCardPayment()));
+                  },
                   icon: Text(
                     'PAY',
                     style: TextStyle(

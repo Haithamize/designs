@@ -10,6 +10,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'modules/alert_dialogs/order_confirmed.dart';
 import 'modules/alert_dialogs/simple_alert_dialogs.dart';
+import 'modules/categories/categories_screen.dart';
 import 'modules/categories/sub_categories/sub_categories_other_screen.dart';
 import 'modules/categories/sub_categories/sub_categories_screen.dart';
 import 'modules/choose_payment_method/choose_payment_method_screen.dart';
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
         builder: (context, state) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
-            home: MobileOtpScreen(),
+            home: ZumraLayout(),
           );
         },
       ),

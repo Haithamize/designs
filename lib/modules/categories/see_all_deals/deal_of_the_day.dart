@@ -137,7 +137,7 @@ class DealOfTheDay extends StatelessWidget {
               GridView.builder(
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
-                  itemCount: 4,
+                  itemCount: 3,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       mainAxisSpacing: 10,
